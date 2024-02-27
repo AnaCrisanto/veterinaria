@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos</title>
+    <style>
+        .texto{
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page" data-theme="a" class="pagina">
+        <div data-role="header" data-theme="b"  class="navbar">
+            <h1>Tienda de Ropa</h1>
+            <div data-role="navbar" data-iconpos="left">
+                <ul>
+                    <li><a data-icon="home" data-theme="" href="/api/clothing/home<%= products.barcode %>">Inicio</a></li>
+                    <li><a data-icon="plus" data-theme="" href="/api/clothing/<%= products.barcode %>">Agregar Producto</a></li>
+                    <li><a data-icon="grid" data-theme="" href="/api/clothing/info<%= products.barcode %>">Contactanos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div role="main" class="ui-content" style="text-align: center;">
+            <h2 class="texto">Información de Contacto</h2>
+            <p class="texto">¡Gracias por visitar nuestra tienda de ropa!</p>
+            <p class="texto">Puedes encontrarnos en la siguiente dirección:</p>
+            <p class="texto">Dirección: Calle Centro, Número 1234</p>
+            <p class="texto">Teléfono: (123) 456-7890</p>
+            <p class="texto">Correo electrónico: info@tiendaropa.com</p>
+            <p class="texto">Horario de atención: Lunes a Viernes de 9:00 am a 6:00 pm</p>
+        </div>
+        
+        <div><img src="https://www.hostinger.es/tutoriales/wp-content/uploads/sites/7/2020/06/tienda-de-ropa.webp" alt="Imagenes"></div>
+        
+    </div>
+</body>
+</html>

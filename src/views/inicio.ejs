@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Clínica Veterinaria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+           background-color: rgb(189, 255, 219);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            text-align: center; 
+            padding: 20px; 
+        }
+
+        img {
+            display: block; 
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .pagina {
+            background-color: #fff;
+            width: 100% !important;
+            height: auto !important;
+            padding-bottom: 50px;
+        }
+
+        .navbar {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .navbar h1 {
+            margin: 0;
+        }
+
+        .slider-container {
+            margin: 20px 0;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-container h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .slider-container p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .slider img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer h2 {
+            margin-top: 0;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div data-role="page" data-theme="a" class="pagina">
+        <div data-role="header" data-theme="b" class="navbar">
+            <h1>Clínica Veterinaria</h1>
+        </div>
+        <div class="container">
+            <div class="slider-container" id="imageSlider">
+                <h1>Bienvenido a nuestra Clínica Veterinaria</h1>
+                <p>Brindamos atención y cuidado de calidad para tus mascotas. Nuestro equipo de profesionales está comprometido con la salud y el bienestar de tus amigos peludos.</p>
+                <p>En nuestra clínica, ofrecemos una amplia gama de servicios veterinarios, incluyendo consultas, vacunaciones, cirugías, análisis clínicos y mucho más.</p>
+                <p>Confía en nosotros para cuidar a tus mascotas como si fueran nuestras. Estamos aquí para ayudarte a mantener a tus amigos de cuatro patas felices y saludables.</p>
+                <button onclick="window.location.href='/api/animals/'">Registrar perrito</button>
+                <img src="https://papelmatic.com/wp-content/uploads/2019/09/papelmatic-higiene-profesional-limpieza-desinfeccion-clinicas-veterinarias-980x617.jpg" alt="Imagenes">
+            
+            </div>
+        </div>
+     
+    </div>
+</body>
+</html>
+

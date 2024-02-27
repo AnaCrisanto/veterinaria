@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Clínica Veterinaria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .pagina {
+            background-color: #fff;
+            width: 100% !important;
+            height: auto !important;
+            padding-bottom: 50px;
+        }
+
+        .navbar {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .navbar h1 {
+            margin: 0;
+        }
+
+        .slider-container {
+            margin: 20px 0;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-container h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .slider-container p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .slider img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div data-role="page" data-theme="a" class="pagina">
+        <div data-role="header" data-theme="b"  class="navbar">
+            <h1>Clínica Veterinaria</h1>
+            
+        </div>
+        
+        <div role="content" class="ui-content">
+            <form action="/api/animals" method="POST">
+                <input type="text" name="name" id="name" placeholder="Nombre del animal">
+                <input type="text" name="species" id="species" placeholder="Raza del animal">
+
+                <input type="number" name="age" id="age" placeholder="Edad en meses">
+                <input type="text" name="ownerName" id="ownerName" placeholder="Nombre del propietario">
+                <input type="number" name="ownerContact" id="ownerContact" placeholder="Contacto del propietario">
+                
+                <button type="submit" value="Registrar" data-theme="b">Registrar</button>
+            </form>       
+        </div>
+        
+        <div class="lista">
+            <ul data-role="listview" data-inset="true" data-theme="b" data-divider-theme="a" data-count-theme="a" class="listview">
+                <% animals.forEach((animal) => { %>
+                <li>
+                    <h2><%= animal.name %></h2>
+                    
+                    <p><strong>Especie:</strong> <%= animal.species %></p>
+                    <p><strong>Edad:</strong> <%= animal.age %></p>
+                    <p><strong>Propietario:</strong> <%= animal.ownerName %></p>
+                    <p><strong>Contacto:</strong> <%= animal.ownerContact %></p>
+                    <div>
+                        <a href="/api/animals/<%= animal._id %>" class="ui-btn ui-btn-inline" data-theme="b">Editar</a>
+                    </div>
+
+                    <form action="/api/animals/delete/<%= animal._id %>" method="get"> 
+                        <button type="submit" id="submit-<%= animal._id %>" class="ui-btn ui-btn-inline">Eliminar</button>
+                    </form>     
+                </li>
+                <% }) %>
+            </ul>
+        </div>
+        
+         <div data-role="footer">
+            <a href="/api/animals/home2" class="ui-btn ui-btn-inline">Regresar al Inicio</a>
+        </div>
+    </div>
+
+</body>
+</html>
